@@ -28,7 +28,6 @@ public class BruteForceAttack {
         for (int num = 0; num < plaintextList.size(); num++) {
             int[] plaintext = plaintextList.get(num);
             int[] ciphertext = ciphertextList.get(num);
-
             long startTime = System.nanoTime(); // 记录开始时间（纳秒）
 
             for (int i = 0; i < 1024; i++) { // 2^10 = 1024
