@@ -5,24 +5,6 @@ import java.util.Arrays;
 import java.util.List;
 
 public class ClosedBeta {
-    // 找到与给定明文和密文匹配的密钥
-    private static List<String> findKeys(int[] plaintext, int[] ciphertext) {
-        List<String> keys = new ArrayList<>();
-
-        for (int i = 0; i < 1024; i++) { // 2^10 = 1024
-            String binaryKey = Integer.toBinaryString(i);
-            while (binaryKey.length() < 10) {
-                binaryKey = "0" + binaryKey;
-            }
-            int[] decrypted = SDES_Decrypt.decrypt(ciphertext, binaryKey);
-            if (Arrays.equals(plaintext, decrypted)) {
-                keys.add(binaryKey);
-            }
-        }
-
-        return keys;
-    }
-
     public static void main(String[] args) {
         // 存储找到的密钥
         List<String> foundKeys = new ArrayList<>();
