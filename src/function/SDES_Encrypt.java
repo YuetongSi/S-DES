@@ -1,7 +1,5 @@
 package function;
 
-import function.KeyGeneration;
-
 import java.util.Arrays;
 //加密
 public class SDES_Encrypt {
@@ -168,7 +166,6 @@ public class SDES_Encrypt {
         int result2[] = roundFunction(k2, swap_result);
         // 逆置换
         int final_result[] = finalPermute(result2,IP_inv);
-
         return final_result;
     }
 
@@ -180,11 +177,6 @@ public class SDES_Encrypt {
         int[] plainText = {0,0,1,0,1,0,1,0}; // 8位初始加密信息 plaintext
         int[] cipherText = encrypt(plainText, key);
         System.out.println("数组类型8bits加密输出结果: " + Arrays.toString(cipherText));
-
-        //处理String类型的明文 ASCII 码输入
-//        String plaintextASCII = "fire at 10pm"; // 输入String类型的 ASCII
-//        String ciphertextASCII = encryptASCII(plaintextASCII, key);
-//        System.out.println("ASCII 码加密输出结果: " + ciphertextASCII);
     }
     }
 
