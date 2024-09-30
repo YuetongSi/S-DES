@@ -134,6 +134,10 @@ public class ui extends JFrame{
                     JOptionPane.showMessageDialog(null, "请输入10bits密钥！", "错误", JOptionPane.ERROR_MESSAGE);
                     return;
                 }
+                if (input.length() != 8) {
+                    JOptionPane.showMessageDialog(null, "请输入正确的明文或密文！", "错误", JOptionPane.ERROR_MESSAGE);
+                    return;
+                }
 
                 StringBuilder plaintext = new StringBuilder();
                 boolean isASCII = asciiButton.isSelected();
@@ -162,6 +166,10 @@ public class ui extends JFrame{
 
                 if (key.length() != 10) {
                     JOptionPane.showMessageDialog(null, "请输入正确的密钥！", "错误", JOptionPane.ERROR_MESSAGE);
+                    return;
+                }
+                if (input.length() != 8) {
+                    JOptionPane.showMessageDialog(null, "请输入正确的明文或密文！", "错误", JOptionPane.ERROR_MESSAGE);
                     return;
                 }
 
@@ -223,13 +231,6 @@ public class ui extends JFrame{
         }
         ui win=new ui();
         win.displayWindow();
-//        PoliceListen police=new PoliceListen();
-//        ClearAllListen clPolice=new ClearAllListen();
-//        win.setCommandListenerE(police);
-//        win.setCommandListenerD(police);
-//
-//        win.setCommandListenerClear(clPolice);
-
 
     }
 
